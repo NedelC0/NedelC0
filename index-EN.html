@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================
+     SEO & PAGE INFO
+     - title:       shown in browser tab
+     - description: shown in Google search results
+============================================================ -->
+<title>NedelCo | Business Intelligence Consulting</title>
+<meta name="description" content="NedelCo – Business Intelligence consulting. Bridging data and business. Sacha Nedeljkovic, BI consultant." />
+
+<!-- Open Graph: controls how your link looks when shared on LinkedIn, WhatsApp, etc. -->
+<meta property="og:title" content="NedelCo | Business Intelligence Consulting" />
+<meta property="og:description" content="Bridging data and business." />
+<meta property="og:image" content="https://nedelco.be/sacha.png" />
+
+<style>
+/* ============================================================
+   DESIGN — you generally don't need to edit anything below
+   unless you want to change colors, fonts, or layout.
+   
+   Main accent color: #38bdf8  (sky blue)
+   Background color: #020617  (very dark navy)
+============================================================ */
+* { box-sizing: border-box; }
+body { 
+  margin: 0; 
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+  background: #020617;
+  color: #e5e7eb;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.container { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 60px 24px;
+  position: relative;
+  z-index: 1;
+}
+.card { 
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 24px; 
+  padding: 56px; 
+  box-shadow: 
+    0 0 0 1px rgba(56, 189, 248, 0.1),
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.5) 20%, rgba(56, 189, 248, 0.8) 50%, rgba(56, 189, 248, 0.5) 80%, transparent 100%);
+}
+
+/* ===========================================================
+   LANGUAGE SWITCHER
+   The small NL / EN buttons in the top-right corner.
+   To add French later: add  <a href="index-fr.html">FR</a>
+   inside the .lang-switcher div, and create index-fr.html.
+=========================================================== */
+.lang-switcher {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.lang-switcher a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.lang-switcher a:hover {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.lang-switcher a.active {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+h1 { 
+  font-size: 3.5rem; 
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+}
+h2 { 
+  font-weight: 300; 
+  color: #94a3b8; 
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, transparent);
+  margin: 12px auto 0;
+}
+h3 { font-size: 1.4rem; font-weight: 600; color: #e2e8f0; margin: 0 0 0.75rem 0; }
+.hero { display: flex; flex-direction: column; align-items: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.hero-content { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+.hero-header { padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+.hero-image-container { display: flex; justify-content: center; }
+.hero img { 
+  width: 100%; max-width: 300px; border-radius: 50%; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 8px rgba(56,189,248,0.15), 0 0 60px rgba(56,189,248,0.2);
+  transition: all 0.4s ease; margin: 0 auto; display: block; border: 3px solid rgba(56, 189, 248, 0.3);
+}
+.hero img:hover { transform: scale(1.05); box-shadow: 0 25px 50px rgba(0,0,0,0.7), 0 0 0 12px rgba(56,189,248,0.25), 0 0 80px rgba(56,189,248,0.4); border-color: rgba(56,189,248,0.5); }
+.tagline { font-size: 1.3rem; margin: 1.5rem 0 0 0; color: #cbd5e1; font-weight: 300; }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin: 60px 0; }
+.service { background: linear-gradient(135deg, rgba(56,189,248,0.05), rgba(96,165,250,0.05)); border: 1px solid rgba(56,189,248,0.15); padding: 32px 28px; border-radius: 16px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+.service::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #38bdf8, #60a5fa); transform: scaleX(0); transition: transform 0.3s ease; }
+.service::after { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 70%); opacity: 0; transition: opacity 0.3s ease; }
+.service:hover::after { opacity: 1; }
+.service:hover { transform: translateY(-4px); background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(96,165,250,0.08)); border-color: rgba(56,189,248,0.3); box-shadow: 0 12px 24px rgba(56,189,248,0.15); }
+.service:hover::before { transform: scaleX(1); }
+.service h3 { margin-bottom: 12px; font-size: 1.25rem; position: relative; z-index: 1; }
+.service p { color: #94a3b8; margin: 0; line-height: 1.7; position: relative; z-index: 1; }
+.about { line-height: 1.8; color: #cbd5e1; background: linear-gradient(135deg, rgba(56,189,248,0.03), rgba(15,23,42,0.5)); padding: 40px; border-radius: 16px; border-left: 4px solid #38bdf8; transition: all 0.3s ease; position: relative; overflow: hidden; }
+.about::before { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(56,189,248,0.05), transparent); transition: left 0.5s ease; }
+.about:hover::before { left: 100%; }
+.about:hover { transform: translateY(-4px); background: rgba(255,255,255,0.04); border-left-color: #0ea5e9; box-shadow: 0 12px 24px rgba(56,189,248,0.15); }
+.about h3 { margin-bottom: 20px; color: #f1f5f9; }
+.about p { margin: 0 0 1.2rem 0; font-size: 1.05rem; }
+.about p:last-child { margin-bottom: 0; }
+.about strong { color: #e2e8f0; font-weight: 600; }
+.cta-section { margin-top: 70px; text-align: center; padding: 50px 40px; background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(96,165,250,0.05)); border-radius: 20px; border: 1px solid rgba(56,189,248,0.2); transition: all 0.3s ease; }
+.cta-section:hover { transform: translateY(-4px); background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(96,165,250,0.08)); border-color: rgba(56,189,248,0.3); box-shadow: 0 12px 24px rgba(56,189,248,0.15); }
+.cta-section h3 { font-size: 2rem; margin-bottom: 12px; color: #f1f5f9; }
+.cta-section > p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: 2px solid transparent; }
+.btn svg { width: 20px; height: 20px; transition: transform 0.3s ease; }
+.btn:hover svg { transform: scale(1.1); }
+.btn-primary { background: linear-gradient(135deg, #38bdf8, #0ea5e9); color: #020617; box-shadow: 0 4px 15px rgba(56,189,248,0.4), 0 0 30px rgba(56,189,248,0.2); position: relative; overflow: hidden; }
+.btn-primary::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,0.3); transform: translate(-50%, -50%); transition: width 0.5s ease, height 0.5s ease; }
+.btn-primary:hover::before { width: 300px; height: 300px; }
+.btn-primary:hover { background: linear-gradient(135deg, #0ea5e9, #0284c7); box-shadow: 0 6px 20px rgba(56,189,248,0.5), 0 0 40px rgba(56,189,248,0.3); transform: translateY(-2px); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-secondary { background: transparent; color: #38bdf8; border-color: #38bdf8; }
+.btn-secondary:hover { background: rgba(56,189,248,0.1); border-color: #0ea5e9; color: #0ea5e9; transform: translateY(-2px); }
+footer { margin-top: 80px; text-align: center; color: #64748b; padding: 40px 0 20px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+footer p { margin: 8px 0; font-size: 0.95rem; }
+footer p:first-child { font-weight: 600; color: #94a3b8; }
+@media (max-width: 768px) {
+  .card { padding: 32px 24px; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.25rem; }
+  .hero img { max-width: 240px; }
+  .tagline { font-size: 1.15rem; }
+  .services { grid-template-columns: 1fr; gap: 20px; }
+  .about { padding: 28px 24px; }
+  .cta-section { padding: 36px 24px; }
+  .cta-section h3 { font-size: 1.6rem; }
+  .cta-buttons { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  .lang-switcher { top: 16px; right: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+
+
+  <!-- ===========================================================
+       LANGUAGE SWITCHER
+       "NL" has class="active" on this file — it appears highlighted.
+       On index-en.html, NL should NOT have class="active",
+       and EN should have class="active" instead.
+       To add French later: add  <a href="index-fr.html">FR</a>  here.
+  =========================================================== -->
+  <div class="lang-switcher">
+    <a href="index.html" class="active">NL</a>
+    <a href="index-en.html">EN</a>
+  </div>
+
+
+  <!-- ===========================================================
+       HERO — name, subtitle, tagline, and your photo
+  =========================================================== -->
+  <div class="hero">
+    <div class="hero-content">
+
+      <div class="hero-header">
+        <h1>NedelCo</h1>                                      <!-- Your company name -->
+        <h2>Business Intelligence Consulting</h2>              <!-- Your subtitle -->
+        <p class="tagline">Bridging data and business</p>     <!-- Short tagline -->
+      </div>
+
+      <div class="hero-image-container">
+        <img src="sacha.png" alt="Sacha Nedeljkovic – BI Consultant" />
+        <!--       ↑ filename of your photo (must be in the same folder as this file) -->
+      </div>
+
+
+      <!-- ===========================================================
+           ABOUT ME — the bio text block
+      =========================================================== -->
+      <div class="about">
+        <h3>Over mij</h3>
+
+        <p>Ik ben <strong>Sacha Nedeljkovic</strong>, Business Intelligence consultant met een passie
+        voor het vertalen van complexe data naar heldere inzichten die bedrijven vooruit helpen.</p>
+
+        <p>Ik combineer technische diepgang met een sterke business mindset. Geen dashboards om
+        dashboards te maken, maar oplossingen die echt gebruikt worden door management en teams.</p>
+
+        <!-- To add another paragraph, copy the line below and fill in your text:
+        <p>Your extra paragraph here.</p>
+        -->
+      </div>
+
+    </div>
+  </div><!-- end hero -->
+
+
+  <!-- ===========================================================
+       SERVICES — add, remove, or edit the cards below.
+       Each service block looks like this:
+
+       <div class="service">
+         <h3>Title</h3>
+         <p>Short description.</p>
+       </div>
+  =========================================================== -->
+  <div class="services">
+
+    <div class="service">
+      <h3>Data & BI Strategie</h3>
+      <p>Van ruwe data naar heldere inzichten die beslissingen sturen.</p>
+    </div>
+
+    <div class="service">
+      <h3>Power BI & Reporting</h3>
+      <p>Dashboards en rapporten die echt gebruikt worden.</p>
+    </div>
+
+    <div class="service">
+      <h3>Data Modeling</h3>
+      <p>Schaalbare en betrouwbare datamodellen.</p>
+    </div>
+
+    <!-- To add a 4th service, paste this block here and fill it in:
+    <div class="service">
+      <h3>Your Service Title</h3>
+      <p>Your service description.</p>
+    </div>
+    -->
+
+  </div><!-- end services -->
+
+
+  <!-- ===========================================================
+       CALL TO ACTION — the bottom contact section
+  =========================================================== -->
+  <div class="cta-section">
+    <h3>Laten we connecteren</h3>
+    <p>Benieuwd hoe ik jouw organisatie kan helpen? Stuur me een bericht of verbind met me op LinkedIn.</p>
+
+    <div class="cta-buttons">
+
+      <!-- Email button — change the email address in both places below -->
+      <a href="mailto:info@nedelco.be" class="btn btn-primary">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>Stuur een e-mail</span>
+      </a>
+
+      <!-- LinkedIn button — replace the URL with your own LinkedIn profile URL -->
+      <a href="https://www.linkedin.com/in/sacha-nedeljkovic" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        <span>Verbind op LinkedIn</span>
+      </a>
+
+    </div>
+  </div><!-- end cta -->
+
+
+  <!-- ===========================================================
+       FOOTER — the small text at the very bottom
+  =========================================================== -->
+  <footer>
+    <p>Sacha Nedeljkovic – BI Consultant</p>
+    <p>info@nedelco.be</p>
+  </footer>
+
+
+</div>
+</div>
+</body>
+</html>
