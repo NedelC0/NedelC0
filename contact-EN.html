@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NedelCo | Contact</title>
+<meta name="description" content="Plan a conversation with NedelCo and send your question through the contact form." />
+<meta property="og:title" content="NedelCo | Contact" />
+<meta property="og:description" content="Send a message and plan a conversation." />
+<meta property="og:image" content="https://nedelco.be/sacha.png" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<div class="page-shell">
+  <div class="page-card">
+    <header class="site-header">
+      <a class="brand" href="index-EN.html">NedelCo</a>
+      <div class="header-right">
+        <a class="btn btn-secondary" href="index-EN.html">Back to home</a>
+        <div class="lang-switch" aria-label="Language">
+          <a href="contact.html">NL</a>
+          <a href="contact-EN.html" class="active">EN</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Plan a conversation</h2>
+          <p class="lead">Send your request through this form and you will receive a reply as soon as possible.</p>
+        </div>
+        <div class="panel reveal">
+          <h3>Direct contact</h3>
+          <p>Prefer to email right away? Use info@nedelco.be.</p>
+          <div class="actions">
+            <a class="btn btn-secondary" href="mailto:info@nedelco.be">Email directly</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <h3>Send a message</h3>
+        <p class="form-success" data-form-success hidden>Thank you. Your message was sent.</p>
+
+        <form class="contact-form" action="https://formsubmit.co/info@nedelco.be" method="POST">
+          <input type="hidden" name="_next" value="https://nedelco.be/contact-EN.html?sent=1" />
+          <input type="hidden" name="_subject" value="New request via nedelco.be" data-subject-field data-base-subject="New request via nedelco.be" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
+
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input class="form-input" id="name" name="name" type="text" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input class="form-input" id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="topic">Topic</label>
+            <input class="form-input" id="topic" name="topic" type="text" data-topic-field />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <span>NedelCo BV</span>
+        <span>Sacha Nedeljkovic - BI Consultant</span>
+        <span>info@nedelco.be</span>
+        <span>BE 1035.623.765</span>
+        <span>&copy; <span data-year></span></span>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
